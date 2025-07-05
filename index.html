@@ -153,7 +153,9 @@
 
     <header class="bg-white shadow-material py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl fixed top-0 w-full z-50">
         <div class="flex items-center">
-            <img src="images/FdMSScA.png" alt="Peak Facades and Rope Access Solutions Logo" class="h-16 mr-4 rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/200x60/244441/dde5e7?text=Peak+Facades+Logo';">
+            <a href="#home" class="scroll-link">
+                <img src="images/FdMSScA.png" alt="Peak Facades and Rope Access Solutions Logo" class="h-16 mr-4 rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/200x60/244441/dde5e7?text=Peak+Facades+Logo';">
+            </a>
         </div>
         <!-- Hamburger menu button for all screen sizes -->
         <button id="mobile-menu-button" class="text-charcoal-brand focus:outline-none focus:ring-2 focus:ring-emerald-brand rounded-md p-2">
@@ -444,7 +446,7 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // Smooth scrolling for navigation links and closing mobile menu
-        document.querySelectorAll('nav a').forEach(anchor => {
+        document.querySelectorAll('nav a, .scroll-link').forEach(anchor => { // Added .scroll-link
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
@@ -487,7 +489,7 @@
                     const j = Math.floor(Math.random() * (i + 1));
                     [array[i], array[j]] = [array[j], array[i]]; // Swap elements
                 }
-            };
+            }
 
             // Shuffle the project cards
             shuffleArray(projectCards);
