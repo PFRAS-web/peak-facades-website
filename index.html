@@ -138,26 +138,37 @@
 </head>
 <body class="bg-white">
 
-    <header class="bg-white shadow-material py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center rounded-b-xl fixed top-0 w-full z-50">
-        <div class="flex items-center mb-4 md:mb-0">
-            <img src="images/FdMSScA.png" alt="Peak Facades and Rope Access Solutions Logo" class="h-16 mr-4 rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/200x60/244441/dde5e7?text=Peak+Facades+Logo';">
-            <span class="text-3xl font-bold text-emerald-brand hidden md:block">Peak Facades</span>
+    <header class="bg-white shadow-material py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl fixed top-0 w-full z-50">
+        <div class="flex items-center">
+            <img src="https://i.imgur.com/FdMSScA.png" alt="Peak Facades and Rope Access Solutions Logo" class="h-16 mr-4 rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/200x60/244441/dde5e7?text=Peak+Facades+Logo';">
+            <!-- Removed the "Peak Facades" text from here -->
         </div>
-        <nav>
-            <ul class="flex space-x-4 sm:space-x-6 lg:space-x-8"> <li><a href="#home" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg">Home</a></li>
-                <li><a href="#services" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg">Services</a></li>
-                <li><a href="#work" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg">Projects</a></li> <li><a href="#consumables" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg">Consumables</a></li>
-                <li><a href="#equipment" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg">Equipment Hire</a></li>
-                <li><a href="#contact" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg">Contact</a></li>
+        <!-- Hamburger menu button for small screens -->
+        <button id="mobile-menu-button" class="md:hidden text-charcoal-brand focus:outline-none focus:ring-2 focus:ring-emerald-brand rounded-md p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        <nav id="main-nav" class="hidden md:block w-full md:w-auto mt-4 md:mt-0">
+            <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 sm:space-x-6 lg:space-x-8 items-center md:items-start">
+                <li><a href="#home" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg py-2 md:py-0 block w-full text-center">Home</a></li>
+                <li><a href="#services" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg py-2 md:py-0 block w-full text-center">Services</a></li>
+                <li><a href="#work" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg py-2 md:py-0 block w-full text-center">Projects</a></li>
+                <li><a href="#consumables" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg py-2 md:py-0 block w-full text-center">Consumables</a></li>
+                <li><a href="#equipment" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg py-2 md:py-0 block w-full text-center">Equipment Hire</a></li>
+                <li><a href="#contact" class="text-charcoal-brand hover:text-emerald-brand transition duration-300 font-medium text-lg py-2 md:py-0 block w-full text-center">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="relative bg-emerald-brand text-white py-24 md:py-40 flex items-center justify-center text-center rounded-b-xl">
+    <section id="home" class="relative bg-emerald-brand text-white py-24 md:py-40 flex flex-col items-center justify-center text-center rounded-b-xl">
         <div class="container mx-auto px-6">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                Reaching Heights in Your Expectations
-            </h1>
+            <!-- Replaced H1 with the specified image -->
+            <img src="images/PFARAS_Primary Logo_White.png" 
+                 alt="Peak Facades and Rope Access Solutions Logo" 
+                 class="w-full max-w-2xl mx-auto mb-6 rounded-lg shadow-material-lg"
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x200/FFFFFF/244441?text=Peak+Facades+Logo';">
+            
             <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto font-normal">
                 Peak Facades and Rope Access Solutions harnesses enthusiasm, skill, and knowledge to deliver unparalleled facade installation, repair, and testing.
             </p>
@@ -219,13 +230,13 @@
             <div class="carousel-container">
                 <div class="carousel-slide" id="projectCarousel">
                     <div class="carousel-image-wrapper">
-                        <img src="images/NIedDjf.jpeg" alt="Project Two" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111811/dde5e7?text=Project+Two';">
+                        <img src="https://i.imgur.com/NIedDjf.jpeg" alt="Project Two" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111811/dde5e7?text=Project+Two';">
                     </div>
                     <div class="carousel-image-wrapper">
-                        <img src="images/SIqk7Qw.jpeg" alt="Project Four" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111811/dde5e7?text=Project+Four';">
+                        <img src="https://i.imgur.com/SIqk7Qw.jpeg" alt="Project Four" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111811/dde5e7?text=Project+Four';">
                     </div>
                     <div class="carousel-image-wrapper">
-                        <img src="images/1DwK9bc.png" alt="New Project" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/244441/dde5e7?text=New+Project';">
+                        <img src="https://i.imgur.com/1DwK9bc.png" alt="New Project" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/244441/dde5e7?text=New+Project';">
                     </div>
                 </div>
 
@@ -308,7 +319,17 @@
                 </p>
                 <div class="space-y-4 mb-8">
                     <p class="text-lg font-semibold">Email: <a href="mailto:info@pfras.com.au" class="text-emerald-brand hover:underline">info@pfras.com.au</a></p>
-                    <p class="text-lg font-semibold">Staffed Hours: Monday to Friday 6.30am - 2.30pm</p>
+                    <!-- Staffed Hours - Multi-line -->
+                    <div class="text-lg">
+                        <p class="font-semibold">Staffed Hours:</p>
+                        <p>Monday: 6.30am - 2.30pm</p>
+                        <p>Tuesday: 6.30am - 2.30pm</p>
+                        <p>Wednesday: 6.30am - 2.30pm</p>
+                        <p>Thursday: 6.30am - 2.30pm</p>
+                        <p>Friday: 6.30am - 2.30pm</p>
+                        <p>Saturday: Closed</p>
+                        <p>Sunday: Closed</p>
+                    </div>
                     <p class="text-lg font-semibold">Our Location:</p>
                     <p class="text-lg">21 Moojebing St, Bayswater, WA 6053</p>
                     <p class="text-lg font-semibold">
@@ -354,7 +375,45 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+                // Close mobile menu if open after clicking a link
+                const mainNav = document.getElementById('main-nav');
+                // Check if the menu is currently visible (not hidden on mobile)
+                if (!mainNav.classList.contains('hidden') && mainNav.classList.contains('flex')) {
+                    mainNav.classList.add('hidden');
+                    mainNav.classList.remove('flex');
+                    mainNav.classList.remove('flex-col');
+                    mainNav.classList.remove('absolute');
+                    mainNav.classList.remove('top-24');
+                    mainNav.classList.remove('right-0');
+                    mainNav.classList.remove('left-auto');
+                    mainNav.classList.remove('w-full');
+                    mainNav.classList.remove('bg-white');
+                    mainNav.classList.remove('shadow-material');
+                    mainNav.classList.remove('rounded-xl');
+                    mainNav.classList.remove('py-4');
+                    mainNav.classList.remove('px-6');
+                    mainNav.classList.remove('items-end');
+                }
             });
+        });
+
+        // Hamburger menu toggle logic
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mainNav = document.getElementById('main-nav');
+            mainNav.classList.toggle('hidden');
+            mainNav.classList.toggle('flex'); // Add flex to make it a column
+            mainNav.classList.toggle('flex-col'); // Ensure it stacks vertically
+            mainNav.classList.toggle('absolute'); // Position absolutely
+            mainNav.classList.toggle('top-24'); // Position below header
+            mainNav.classList.toggle('right-0'); // Align to right
+            mainNav.classList.toggle('left-auto'); // Remove left-0 alignment
+            mainNav.classList.toggle('w-full'); // Take full width
+            mainNav.classList.toggle('bg-white'); // Give it a background
+            mainNav.classList.toggle('shadow-material'); // Add shadow
+            mainNav.classList.toggle('rounded-xl'); // Make all corners rounded
+            mainNav.classList.toggle('py-4'); // Add padding
+            mainNav.classList.toggle('px-6'); // Add padding
+            mainNav.classList.toggle('items-end'); // Align items to the right
         });
 
         // Carousel Logic
