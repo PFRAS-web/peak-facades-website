@@ -92,52 +92,52 @@
             height: 2rem;
         }
 
-        /* Mobile/Desktop Fullscreen menu specific styles */
+        /* Hamburger menu specific styles */
         #main-nav {
             position: fixed; /* Fixed position for overlay */
             top: 0;
-            left: 0;
-            width: 100%;
+            right: 0; /* Align to the right */
+            width: 0; /* Start with 0 width */
             height: 100%;
-            background-color: rgba(36, 68, 65, 0.95); /* Semi-transparent emerald overlay */
-            color: white;
+            background-color: white; /* Solid white background */
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); /* Shadow on the left side */
+            overflow-x: hidden; /* Hide content that overflows */
+            transition: width 0.3s ease-in-out; /* Smooth transition for width */
+            z-index: 100; /* Higher than content, lower than header */
+            padding-top: 96px; /* Space for fixed header */
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 100; /* Higher than header */
-            transform: translateY(-100%); /* Start off-screen (top) */
-            opacity: 0;
-            pointer-events: none; /* Disable clicks when hidden */
-            transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Smooth transition */
+            align-items: flex-start; /* Align menu items to the left within the panel */
         }
 
         #main-nav.is-open {
-            transform: translateY(0); /* Slide in */
-            opacity: 1;
-            pointer-events: auto; /* Enable clicks when open */
+            width: 70%; /* Open width for mobile */
+            max-width: 300px; /* Max width for desktop */
         }
 
         #main-nav ul {
             list-style: none;
-            padding: 0;
+            padding: 0 1.5rem; /* Padding inside the menu */
             margin: 0;
-            text-align: center;
+            width: 100%; /* Take full width of the menu panel */
+            text-align: left; /* Align text to left */
         }
 
         #main-nav ul li {
-            margin-bottom: 1.5rem; /* Space between menu items */
+            margin-bottom: 1rem; /* Space between menu items */
         }
 
         #main-nav ul li a {
-            font-size: 2.5rem; /* Larger font size for menu items */
+            font-size: 1.5rem; /* Smaller font size for menu items */
             font-weight: 700;
-            color: white;
+            color: var(--color-charcoal); /* Dark text color */
+            display: block; /* Make links block level for full click area */
+            padding: 0.5rem 0; /* Padding for click area */
             transition: color 0.3s ease;
         }
 
         #main-nav ul li a:hover {
-            color: var(--color-steel); /* Light steel on hover */
+            color: var(--color-emerald); /* Emerald on hover */
         }
 
         /* Ensure header elements are visible when menu is open */
@@ -446,7 +446,7 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // Smooth scrolling for navigation links and closing mobile menu
-        document.querySelectorAll('nav a, .scroll-link').forEach(anchor => { // Added .scroll-link
+        document.querySelectorAll('nav a, .scroll-link').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
@@ -466,6 +466,19 @@
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mainNav = document.getElementById('main-nav');
             mainNav.classList.toggle('is-open'); // Toggle the 'is-open' class
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const mainNav = document.getElementById('main-nav');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+            // Check if the menu is open and the click is outside the menu and the button
+            if (mainNav.classList.contains('is-open') &&
+                !mainNav.contains(event.target) &&
+                !mobileMenuButton.contains(event.target)) {
+                mainNav.classList.remove('is-open');
+            }
         });
 
         // Carousel Logic
