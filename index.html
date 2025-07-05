@@ -262,8 +262,8 @@
                     <!-- Project Card 3: Perth Hub Apartments -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
-                            <a href="https://i.imgur.com/1DwK9bc.png" data-gallery="projects" data-glightbox="">
-                                <img src="https://i.imgur.com/1DwK9bc.png" alt="Perth Hub Apartments" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Project+3';">
+                            <a href="https://i.imgur.com/Phub.png" data-gallery="projects" data-glightbox="">
+                                <img src="https://i.imgur.com/Phub.png" alt="Perth Hub Apartments" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Project+3';">
                             </a>
                             <div class="p-6 text-left flex-grow">
                                 <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Perth Hub Apartments</h3>
@@ -275,25 +275,12 @@
                     <!-- Project Card 4: Capital Square Tower 3 -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
-                            <a href="images/image_2a39df.jpg" data-gallery="projects" data-glightbox="">
-                                <img src="images/image_2a39df.jpg" alt="Capital Square Tower 3" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Project+4';">
+                            <a href="https://i.imgur.com/CST3.png" data-gallery="projects" data-glightbox="">
+                                <img src="https://i.imgur.com/CST3.png" alt="Capital Square Tower 3" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Project+4';">
                             </a>
                             <div class="p-6 text-left flex-grow">
                                 <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Capital Square Tower 3</h3>
                                 <p class="font-normal leading-relaxed text-charcoal-brand">A landmark project in Perth, the Capital Square Tower 3 features a stunning hourglass-shaped design. Our scope included the precise installation of its intricate curtain wall facade, seamlessly integrating architectural sunshades to enhance both aesthetics and performance.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 5: Residential Glass Facade -->
-                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
-                            <a href="https://placehold.co/800x400/244441/dde5e7?text=Residential+Glass+Facade" data-gallery="projects" data-glightbox="">
-                                <img src="https://placehold.co/400x200/244441/dde5e7?text=Residential+Glass+Facade" alt="Residential Glass Facade" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Residential+Glass+Facade';">
-                            </a>
-                            <div class="p-6 text-left flex-grow">
-                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Residential Glass Facade</h3>
-                                <p class="font-normal leading-relaxed text-charcoal-brand">Implemented a sleek glass facade for a luxury residential property, maximizing natural light and views.</p>
                             </div>
                         </div>
                     </div>
@@ -477,6 +464,12 @@
             // Get children elements and convert to a real array
             let projectCards = Array.from(carouselTrack.children);
 
+            // Filter out the "Residential Glass Facade" project
+            projectCards = projectCards.filter(card => {
+                const titleElement = card.querySelector('h3');
+                return titleElement ? titleElement.textContent !== 'Residential Glass Facade' : true;
+            });
+
             // Fisher-Yates (Knuth) shuffle algorithm
             const shuffleArray = (array) => {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -510,6 +503,11 @@
             const updateCarousel = () => {
                 // Ensure currentSlideIndex is within bounds for looping
                 const maxSlideIndex = Math.ceil(projectCards.length / itemsPerPage) - 1;
+
+                if (projectCards.length === 0) { // Handle case with no cards
+                    carouselTrack.style.transform = `translateX(0%)`;
+                    return;
+                }
 
                 if (currentSlideIndex < 0) {
                     currentSlideIndex = maxSlideIndex;
