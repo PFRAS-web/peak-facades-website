@@ -292,4 +292,183 @@
                     <p class="font-normal leading-relaxed">Versatile aerial work platforms providing stable and elevated access for various facade installation and maintenance tasks.</p>
                 </div>
                 <div class="bg-white p-10 rounded-xl shadow-material text-left">
-                    <h3 class="te
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Material Handling Equipment</h3>
+                    <p class="font-normal leading-relaxed">Includes forklifts and walkie reaches for efficient movement and placement of materials on site.</p>
+                </div>
+                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-brand">2-Part Structural Silicone Pumps</h3>
+                    <p class="font-normal leading-relaxed">Precision pumping equipment for accurate mixing and application of two-part structural silicone sealants.</p>
+                </div>
+                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Glazing Robots</h3>
+                    <p class="font-normal leading-relaxed">These machines are ideal for lifting and installing glass panels in a wide range of environments - From tight indoor spaces to challenging construction sites.</p>
+                </div>
+            </div>
+            <p class="mt-16 text-xl font-normal">
+                For detailed information on our equipment availability and pricing, please reach out to our team.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl">
+        <div class="container mx-auto px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16">Contact Peak Facades</h2>
+            <div class="max-w-2xl mx-auto bg-white p-10 rounded-xl shadow-material-lg text-charcoal-brand">
+                <p class="text-xl mb-6 leading-relaxed">
+                    We're here to help with all your facade and rope access needs. Feel free to reach out to us directly:
+                </p>
+                <div class="space-y-4 mb-8">
+                    <p class="text-lg font-semibold">Email: <a href="mailto:info@pfras.com.au" class="text-emerald-brand hover:underline">info@pfras.com.au</a></p>
+                    <!-- Staffed Hours - Multi-line -->
+                    <div class="text-lg">
+                        <p class="font-semibold">Staffed Hours:</p>
+                        <p>Monday: 6.30am - 2.30pm</p>
+                        <p>Tuesday: 6.30am - 2.30pm</p>
+                        <p>Wednesday: 6.30am - 2.30pm</p>
+                        <p>Thursday: 6.30am - 2.30pm</p>
+                        <p>Friday: 6.30am - 2.30pm</p>
+                        <p>Saturday: Closed</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    <p class="text-lg font-semibold">Our Location:</p>
+                    <p class="text-lg">21 Moojebing St, Bayswater, WA 6053</p>
+                    <p class="text-lg font-semibold">
+                        Follow us on Instagram: 
+                        <a href="https://www.instagram.com/peak_facades" target="_blank" rel="noopener noreferrer" class="text-emerald-brand hover:underline">@peak_facades</a>
+                    </p>
+                </div>
+
+                <!-- Embedded Google Map -->
+                <div class="w-full h-80 rounded-lg overflow-hidden shadow-material-lg">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.733703957597!2d115.91896737525389!3d-31.93664032332159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32b1d3d0f4d1e1%3A0x2d5f8a0e8c0e7d5!2s21%20Moojebing%20St%2C%20Bayswater%20WA%206053%2C%20Australia!5e0!3m2!1sen!2sau!4v1719973200000!5m2!1sen!2sau"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-charcoal-brand text-steel-brand py-10 px-6 md:px-12 text-center rounded-t-xl">
+        <p class="text-lg">&copy; <span id="current-year"></span> Peak Facades and Rope Access Solutions. All rights reserved.</p>
+        <p class="mt-4 text-base">
+            <a href="https://www.instagram.com/peak_facades" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-brand transition duration-300">
+                Follow us on Instagram
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        // Set current year for the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open after clicking a link
+                const mainNav = document.getElementById('main-nav');
+                // Check if the menu is currently visible (not hidden on mobile)
+                if (!mainNav.classList.contains('hidden') && mainNav.classList.contains('flex')) {
+                    mainNav.classList.add('hidden');
+                    mainNav.classList.remove('flex');
+                    mainNav.classList.remove('flex-col');
+                    mainNav.classList.remove('absolute');
+                    mainNav.classList.remove('top-24');
+                    mainNav.classList.remove('right-0');
+                    mainNav.classList.remove('left-auto');
+                    mainNav.classList.remove('w-full');
+                    mainNav.classList.remove('bg-white');
+                    mainNav.classList.remove('shadow-material');
+                    mainNav.classList.remove('rounded-xl');
+                    mainNav.classList.remove('py-4');
+                    mainNav.classList.remove('px-6');
+                    mainNav.classList.remove('items-end');
+                }
+            });
+        });
+
+        // Hamburger menu toggle logic
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mainNav = document.getElementById('main-nav');
+            mainNav.classList.toggle('hidden');
+            mainNav.classList.toggle('flex'); // Add flex to make it a column
+            mainNav.classList.toggle('flex-col'); // Ensure it stacks vertically
+            mainNav.classList.toggle('absolute'); // Position absolutely
+            mainNav.classList.toggle('top-24'); // Position below header
+            mainNav.classList.toggle('right-0'); // Align to right
+            mainNav.classList.toggle('left-auto'); // Remove left-0 alignment
+            mainNav.classList.toggle('w-full'); // Take full width
+            mainNav.classList.toggle('bg-white'); // Give it a background
+            mainNav.classList.toggle('shadow-material'); // Add shadow
+            mainNav.classList.toggle('rounded-xl'); // Make all corners rounded
+            mainNav.classList.toggle('py-4'); // Add padding
+            mainNav.classList.toggle('px-6'); // Add padding
+            mainNav.classList.toggle('items-end'); // Align items to the right
+        });
+
+        // Carousel Logic
+        let slideIndex = 0;
+        const slides = document.getElementById('projectCarousel').children;
+        // Recalculate totalSlides after adding an element
+        let totalSlides = slides.length;
+        const carouselDotsContainer = document.getElementById('carouselDots');
+
+        // Clear existing dots and re-create for accurate count
+        carouselDotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', () => currentSlide(i));
+            carouselDotsContainer.appendChild(dot);
+        }
+
+        function showSlides() {
+            const carouselSlide = document.getElementById('projectCarousel');
+            if (carouselSlide) {
+                // Ensure slideIndex wraps around
+                if (slideIndex >= totalSlides) { slideIndex = 0; }
+                if (slideIndex < 0) { slideIndex = totalSlides - 1; }
+
+                // Apply transform to show the current slide
+                carouselSlide.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+                // Update active dot
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === slideIndex) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        function moveSlide(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+
+        // Initialize carousel on page load
+        document.addEventListener('DOMContentLoaded', showSlides);
+
+        // Optional: Auto-play the carousel
+        // setInterval(() => moveSlide(1), 5000); // Change image every 5 seconds
+    </script>
+</body>
+</html>
