@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter (similar to Avenir for general use) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* Custom Tailwind Configuration for Brand Colors and Fonts */
         :root {
@@ -161,7 +163,7 @@
         </nav>
     </header>
 
-    <section id="home" class="relative bg-emerald-brand text-white py-24 md:py-40 flex flex-col items-center justify-center text-center rounded-b-xl">
+    <section id="home" class="relative bg-emerald-brand text-white py-24 md:py-40 flex flex-col items-center justify-center text-center rounded-b-xl" data-aos="fade-down">
         <div class="container mx-auto px-6">
             <!-- Updated image src to PFARAS~4.PNG and removed rounded/shadow classes -->
             <img src="images/PFARAS~4.PNG" 
@@ -169,65 +171,66 @@
                  class="w-full max-w-2xl mx-auto mb-6"
                  onerror="this.onerror=null;this.src='https://placehold.co/800x200/FFFFFF/244441?text=Peak+Facades+Logo';">
             
-            <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto font-normal">
+            <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto font-normal" data-aos="fade-up" data-aos-delay="200">
                 Peak Facades and Rope Access Solutions harnesses enthusiasm, skill, and knowledge to deliver unparalleled facade installation, repair, and testing.
             </p>
-            <a href="#contact" class="bg-steel-brand text-emerald-brand hover:bg-white hover:text-emerald-brand transition duration-300 py-4 px-10 text-xl font-bold shadow-material rounded-full">
+            <a href="#contact" class="bg-steel-brand text-emerald-brand hover:bg-white hover:text-emerald-brand transition duration-300 py-4 px-10 text-xl font-bold shadow-material rounded-full" data-aos="zoom-in" data-aos-delay="400">
                 Get in Touch
             </a>
         </div>
     </section>
 
-    <section id="services" class="py-20 md:py-32 bg-steel-brand text-charcoal-brand rounded-xl mx-auto my-12 max-w-7xl">
+    <section id="services" class="py-20 md:py-32 bg-steel-brand text-charcoal-brand rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12">Our Comprehensive Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> <div class="bg-white p-10 rounded-xl shadow-material text-left">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-right">Our Comprehensive Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> 
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Façade Installation</h3>
                     <p class="font-normal leading-relaxed">Expert installation of high-rise windows, general facade systems (architect architectural steel, aluminum cladding, glass), and cladding supply.</p>
                 </div>
 
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Façade Supply</h3>
                     <p class="font-normal leading-relaxed">Supply of high-quality facade materials, silicone, and glazing consumables.</p>
                 </div>
 
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="300">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Façade Design & Engineering</h3>
                     <p class="font-normal leading-relaxed">Comprehensive facade design, fabrication, management, and engineering services.</p>
                 </div>
 
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Façade Maintenance & Repair</h3>
                     <p class="font-normal leading-relaxed">Expert repairs, water ingress solutions, and inspection/testing for all facade systems.</p>
                 </div>
 
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Specialized Access & Cleaning</h3>
                     <p class="font-normal leading-relaxed">Professional rope access and specialized window cleaning services.</p>
                 </div>
 
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="300">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Custom Solutions</h3>
                     <p class="font-normal leading-relaxed">Providing tailored solutions and specialized expertise for complex facade projects.</p>
                 </div>
 
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">QA & Project Management</h3>
                     <p class="font-normal leading-relaxed">Ensuring superior project outcomes through rigorous quality control, meticulous planning, risk management, and transparent stakeholder communication.</p>
                 </div>
 
             </div>
-            <p class="mt-16 text-xl font-normal max-w-5xl mx-auto leading-relaxed">
+            <p class="mt-16 text-xl font-normal max-w-5xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="500">
                 As a family-oriented business, our genuine approach to clients enables us to create honest connections and build life-long relationships. Our unparalleled work ethic and unique approach to façade installation makes us a trusted partner you can rely on. We believe in an honest day's work, reaching new heights.
             </p>
         </div>
     </section>
 
-    <section id="work" class="py-20 md:py-32 bg-white text-charcoal-brand">
+    <section id="work" class="py-20 md:py-32 bg-white text-charcoal-brand" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-16">Our Recent Projects</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-left">Our Recent Projects</h2>
 
-            <div class="carousel-container">
+            <div class="carousel-container" data-aos="zoom-in" data-aos-delay="200">
                 <div class="carousel-slide" id="projectCarousel">
                     <div class="carousel-image-wrapper">
                         <img src="https://i.imgur.com/NIedDjf.jpeg" alt="Project Two" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111811/dde5e7?text=Project+Two';">
@@ -247,80 +250,81 @@
         </div>
     </section>
 
-    <section id="consumables" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl">
+    <section id="consumables" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12">Quality Consumables for Your Projects</h2>
-            <p class="text-xl md:text-2xl mb-16 max-w-4xl mx-auto font-normal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-right">Quality Consumables for Your Projects</h2>
+            <p class="text-xl md:text-2xl mb-16 max-w-4xl mx-auto font-normal" data-aos="fade-up" data-aos-delay="200">
                 In addition to our facade services, we supply high-quality silicone and glazing consumables. Ensure the longevity and performance of your installations with products you can trust.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10"> <div class="bg-white p-10 rounded-xl shadow-material text-charcoal-brand">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10"> 
+                <div class="bg-white p-10 rounded-xl shadow-material text-charcoal-brand" data-aos="fade-up" data-aos-delay="300">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Dowsil 791 Weatherproofing Sealant</h3>
                     <p class="font-normal leading-relaxed">A one-part, medium-modulus silicone sealant designed for weathersealing applications. It offers excellent weatherability, remaining virtually unaffected by sunlight, rain, snow, and ozone, with ±50% joint movement capability and low odor.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-material text-charcoal-brand">
+                <div class="bg-white p-10 rounded-xl shadow-material text-charcoal-brand" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Dowsil 795 Structural Glazing Sealant</h3>
                     <p class="font-normal leading-relaxed">A one-component, neutral-curing silicone sealant designed for structural bonding of materials like glass and metal. It's a medium-modulus sealant with strong adhesion to various materials and a movement capability of ±50%.</p>
                 </div>
             </div>
-            <p class="mt-16 text-xl font-normal">
+            <p class="mt-16 text-xl font-normal" data-aos="fade-up" data-aos-delay="500">
                 For inquiries about our consumable products, please contact us directly.
             </p>
         </div>
     </section>
 
-    <section id="equipment" class="py-20 md:py-32 bg-steel-brand text-charcoal-brand rounded-xl mx-auto my-12 max-w-7xl">
+    <section id="equipment" class="py-20 md:py-32 bg-steel-brand text-charcoal-brand rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12">Equipment Hire</h2>
-            <p class="text-xl md:text-2xl mb-16 max-w-4xl mx-auto font-normal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-right">Equipment Hire</h2>
+            <p class="text-xl md:text-2xl mb-16 max-w-4xl mx-auto font-normal" data-aos="fade-up" data-aos-delay="200">
                 Peak Facades offers a comprehensive range of specialized equipment for hire, ensuring your facade and rope access projects are completed efficiently and safely.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="300">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Spider Cranes</h3>
                     <p class="font-normal leading-relaxed">Compact and versatile cranes ideal for lifting and precise positioning in confined spaces or challenging access areas.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Pick and Carry Cranes</h3>
                     <p class="font-normal leading-relaxed">Highly maneuverable cranes designed for lifting and transporting loads across construction sites with ease.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="500">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Pneumatic Glass Lifters</h3>
                     <p class="font-normal leading-relaxed">Specialized vacuum lifters for safe and efficient handling and installation of large glass panels.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="300">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Scissor Lifts</h3>
                     <p class="font-normal leading-relaxed">Versatile aerial work platforms providing stable and elevated access for various facade installation and maintenance tasks.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Material Handling Equipment</h3>
                     <p class="font-normal leading-relaxed">Includes forklifts and walkie reaches for efficient movement and placement of materials on site.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="500">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">2-Part Structural Silicone Pumps</h3>
                     <p class="font-normal leading-relaxed">Precision pumping equipment for accurate mixing and application of two-part structural silicone sealants.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-material text-left">
+                <div class="bg-white p-10 rounded-xl shadow-material text-left" data-aos="fade-up" data-aos-delay="600">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-brand">Glazing Robots</h3>
                     <p class="font-normal leading-relaxed">These machines are ideal for lifting and installing glass panels in a wide range of environments - From tight indoor spaces to challenging construction sites.</p>
                 </div>
             </div>
-            <p class="mt-16 text-xl font-normal">
+            <p class="mt-16 text-xl font-normal" data-aos="fade-up" data-aos-delay="700">
                 For detailed information on our equipment availability and pricing, please reach out to our team.
             </p>
         </div>
     </section>
 
-    <section id="contact" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl">
+    <section id="contact" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-16">Contact Peak Facades</h2>
-            <div class="max-w-2xl mx-auto bg-white p-10 rounded-xl shadow-material-lg text-charcoal-brand">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-right">Contact Peak Facades</h2>
+            <div class="max-w-2xl mx-auto bg-white p-10 rounded-xl shadow-material-lg text-charcoal-brand" data-aos="zoom-in" data-aos-delay="200">
                 <p class="text-xl mb-6 leading-relaxed">
                     We're here to help with all your facade and rope access needs. Feel free to reach out to us directly:
                 </p>
                 <div class="space-y-4 mb-8">
-                    <p class="text-lg font-semibold">Email: <a href="mailto:info@pfras.com.au" class="text-emerald-brand hover:underline">info@pfras.com.au</a></p>
+                    <p class="text-lg font-semibold" data-aos="fade-right" data-aos-delay="300">Email: <a href="mailto:info@pfras.com.au" class="text-emerald-brand hover:underline">info@pfras.com.au</a></p>
                     <!-- Staffed Hours - Multi-line -->
-                    <div class="text-lg">
+                    <div class="text-lg" data-aos="fade-right" data-aos-delay="400">
                         <p class="font-semibold">Staffed Hours:</p>
                         <p>Monday: 6.30am - 2.30pm</p>
                         <p>Tuesday: 6.30am - 2.30pm</p>
@@ -330,16 +334,16 @@
                         <p>Saturday: Closed</p>
                         <p>Sunday: Closed</p>
                     </div>
-                    <p class="text-lg font-semibold">Our Location:</p>
-                    <p class="text-lg">21 Moojebing St, Bayswater, WA 6053</p>
-                    <p class="text-lg font-semibold">
+                    <p class="text-lg font-semibold" data-aos="fade-right" data-aos-delay="500">Our Location:</p>
+                    <p class="text-lg" data-aos="fade-right" data-aos-delay="600">21 Moojebing St, Bayswater, WA 6053</p>
+                    <p class="text-lg font-semibold" data-aos="fade-right" data-aos-delay="700">
                         Follow us on Instagram: 
                         <a href="https://www.instagram.com/peak_facades" target="_blank" rel="noopener noreferrer" class="text-emerald-brand hover:underline">@peak_facades</a>
                     </p>
                 </div>
 
                 <!-- Embedded Google Map -->
-                <div class="w-full h-80 rounded-lg overflow-hidden shadow-material-lg">
+                <div class="w-full h-80 rounded-lg overflow-hidden shadow-material-lg" data-aos="zoom-in" data-aos-delay="800">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.733703957597!2d115.91896737525389!3d-31.93664032332159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32b1d3d0f4d1e1%3A0x2d5f8a0e8c0e7d5!2s21%20Moojebing%20St%2C%20Bayswater%20WA%206053%2C%20Australia!5e0!3m2!1sen!2sau!4v1719973200000!5m2!1sen!2sau"
                         width="100%"
@@ -354,7 +358,7 @@
         </div>
     </section>
 
-    <footer class="bg-charcoal-brand text-steel-brand py-10 px-6 md:px-12 text-center rounded-t-xl">
+    <footer class="bg-charcoal-brand text-steel-brand py-10 px-6 md:px-12 text-center rounded-t-xl" data-aos="fade-up">
         <p class="text-lg">&copy; <span id="current-year"></span> Peak Facades and Rope Access Solutions. All rights reserved.</p>
         <p class="mt-4 text-base">
             <a href="https://www.instagram.com/peak_facades" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-brand transition duration-300">
@@ -363,7 +367,15 @@
         </p>
     </footer>
 
+    <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800, // values from 0 to 3000, with step 50ms
+            once: true, // whether animation should happen only once - while scrolling down
+        });
+
         // Set current year for the footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
