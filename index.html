@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- AOS (Animate On Scroll) CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- GLightbox CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
     <style>
         /* Custom Tailwind Configuration for Brand Colors and Fonts */
         :root {
@@ -56,85 +58,40 @@
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15), 0px 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Carousel specific styles - Adjusted for responsiveness */
-        .carousel-container {
-            position: relative;
-            /* Changed max-width to 100% to ensure it scales down on smaller screens */
-            max-width: 100%;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15), 0px 16px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        /* On smaller screens, constrain the carousel container width further */
-        @media (max-width: 768px) {
-            .carousel-container {
-                max-width: 90vw; /* Use viewport width for better mobile fit */
-            }
-        }
-
-        .carousel-slide {
-            display: flex;
+        /* Carousel specific styles */
+        .carousel-track {
             transition: transform 0.5s ease-in-out;
         }
-        .carousel-image-wrapper {
-            min-width: 100%;
-            box-sizing: border-box;
-            position: relative;
-        }
-        .carousel-image {
-            width: 100%;
-            /* Adjusted height to be responsive using aspect-ratio for better scaling */
-            height: auto; /* Allow height to adjust based on width */
-            aspect-ratio: 1 / 1; /* Changed to 1/1 for square aspect ratio */
-            object-fit: cover;
-            border-radius: 1rem;
-        }
-        /* Removed carousel-description styling as the element is being removed */
         .carousel-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: var(--color-emerald);
+            background-color: rgba(36, 68, 65, 0.7); /* Emerald brand with transparency */
             color: white;
-            border: none;
-            padding: 0.75rem 1rem;
+            padding: 1rem 0.75rem;
+            border-radius: 9999px; /* Full rounded */
             cursor: pointer;
-            font-size: 1.5rem;
-            border-radius: 0.75rem;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
             z-index: 10;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem; /* Larger touch target */
+            height: 4rem; /* Larger touch target */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
         .carousel-button:hover {
-            background-color: var(--color-light-emerald);
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: var(--color-emerald);
         }
-        .carousel-button.prev {
+        .carousel-button.left {
             left: 1rem;
         }
-        .carousel-button.next {
+        .carousel-button.right {
             right: 1rem;
         }
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 8px;
-            background-color: var(--color-dark-steel);
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .dot.active {
-            background-color: var(--color-emerald);
-            transform: scale(1.2);
+        .carousel-button svg {
+            width: 2rem;
+            height: 2rem;
         }
     </style>
 </head>
@@ -228,25 +185,89 @@
 
     <section id="work" class="py-20 md:py-32 bg-white text-charcoal-brand" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-left">Our Recent Projects</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-left">Projects</h2>
 
-            <div class="carousel-container" data-aos="zoom-in" data-aos-delay="200">
-                <div class="carousel-slide" id="projectCarousel">
-                    <div class="carousel-image-wrapper">
-                        <img src="https://i.imgur.com/NIedDjf.jpeg" alt="Project Two" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111811/dde5e7?text=Project+Two';">
+            <div class="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl shadow-material-lg">
+                <!-- Carousel Track -->
+                <div id="projects-carousel-track" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Project Card 1: NRT Train Stations NSW -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://i.imgur.com/NIedDjf.jpeg" data-gallery="projects" data-glightbox="">
+                                <img src="https://i.imgur.com/NIedDjf.jpeg" alt="NRT Train Stations NSW" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/111811/dde5e7?text=Project+1';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">NRT Train Stations NSW</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Successfully completed the intricate installation of the sawtooth facade at both Kellyville and Rouse Hill Train Stations in NSW, delivering a distinctive and high-quality architectural finish.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="carousel-image-wrapper">
-                        <img src="https://i.imgur.com/SIqk7Qw.jpeg" alt="Project Four" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111811/dde5e7?text=Project+Four';">
+
+                    <!-- Project Card 2: DoubleTree by Hilton Perth Waterfront -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://i.imgur.com/SIqk7Qw.jpeg" data-gallery="projects" data-glightbox="">
+                                <img src="https://i.imgur.com/SIqk7Qw.jpeg" alt="DoubleTree by Hilton Perth Waterfront" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/111811/dde5e7?text=Project+2';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">DoubleTree by Hilton Perth Waterfront</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Comprehensive installation of curtain wall panels, including integrated windows and projected cladding panels. Our work also encompassed the installation of the elegant balustrade system around the pool and roof levels, alongside the striking feature canopy.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="carousel-image-wrapper">
-                        <img src="https://i.imgur.com/1DwK9bc.png" alt="New Project" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x400/244441/dde5e7?text=New+Project';">
+
+                    <!-- Project Card 3: Perth Hub Apartments -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://i.imgur.com/1DwK9bc.png" data-gallery="projects" data-glightbox="">
+                                <img src="https://i.imgur.com/1DwK9bc.png" alt="Perth Hub Apartments" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Project+3';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Perth Hub Apartments</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of the curtain wall facade including lift and turn operable windows. Our scope also included the final clean of the facade and the installation of structural steel to support the curtain wall on the roof level.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4: Capital Square Tower 3 -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="images/image_2a39df.jpg" data-gallery="projects" data-glightbox="">
+                                <img src="images/image_2a39df.jpg" alt="Capital Square Tower 3" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Project+4';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Capital Square Tower 3</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">A landmark project in Perth, the Capital Square Tower 3 features a stunning hourglass-shaped design. Our scope included the precise installation of its intricate curtain wall facade, seamlessly integrating architectural sunshades to enhance both aesthetics and performance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5: Residential Glass Facade -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://placehold.co/800x400/244441/dde5e7?text=Residential+Glass+Facade" data-gallery="projects" data-glightbox="">
+                                <img src="https://placehold.co/400x200/244441/dde5e7?text=Residential+Glass+Facade" alt="Residential Glass Facade" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Residential+Glass+Facade';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Residential Glass Facade</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Implemented a sleek glass facade for a luxury residential property, maximizing natural light and views.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+                <!-- Navigation Buttons -->
+                <button id="prev-btn" class="carousel-button left">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button id="next-btn" class="carousel-button right">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
             </div>
-            <div class="carousel-dots" id="carouselDots"></div>
         </div>
     </section>
 
@@ -369,11 +390,21 @@
 
     <!-- AOS (Animate On Scroll) JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
         // Initialize AOS
         AOS.init({
             duration: 800, // values from 0 to 3000, with step 50ms
             once: true, // whether animation should happen only once - while scrolling down
+        });
+
+        // Initialize GLightbox
+        const lightbox = GLightbox({
+            selector: 'a[data-glightbox]',
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: true,
         });
 
         // Set current year for the footer
@@ -417,70 +448,101 @@
             mainNav.classList.toggle('flex-col'); // Ensure it stacks vertically
             mainNav.classList.toggle('absolute'); // Position absolutely
             mainNav.classList.toggle('top-24'); // Position below header
-            mainNav.classList.toggle('right-0'); // Align to right
-            mainNav.classList.toggle('left-auto'); // Remove left-0 alignment
-            mainNav.classList.toggle('w-full'); // Take full width
-            mainNav.classList.toggle('bg-white'); // Give it a background
-            mainNav.classList.toggle('shadow-material'); // Add shadow
-            mainNav.classList.toggle('rounded-xl'); // Make all corners rounded
-            mainNav.classList.toggle('py-4'); // Add padding
-            mainNav.classList.toggle('px-6'); // Add padding
-            mainNav.classList.toggle('items-end'); // Align items to the right
+            mainNav.classList.remove('right-0'); // Align to right
+            mainNav.classList.remove('left-auto'); // Remove left-0 alignment
+            mainNav.classList.remove('w-full'); // Take full width
+            mainNav.classList.remove('bg-white'); // Give it a background
+            mainNav.classList.remove('shadow-material'); // Add shadow
+            mainNav.classList.remove('rounded-xl'); // Make all corners rounded
+            mainNav.classList.remove('py-4'); // Add padding
+            mainNav.classList.remove('px-6'); // Add padding
+            mainNav.classList.remove('items-end'); // Align items to the right
         });
 
         // Carousel Logic
-        let slideIndex = 0;
-        const slides = document.getElementById('projectCarousel').children;
-        // Recalculate totalSlides after adding an element
-        let totalSlides = slides.length;
-        const carouselDotsContainer = document.getElementById('carouselDots');
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselTrack = document.getElementById('projects-carousel-track');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            // Get children elements and convert to a real array
+            let projectCards = Array.from(carouselTrack.children);
 
-        // Clear existing dots and re-create for accurate count
-        carouselDotsContainer.innerHTML = '';
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            dot.setAttribute('data-index', i);
-            dot.addEventListener('click', () => currentSlide(i));
-            carouselDotsContainer.appendChild(dot);
-        }
+            // Fisher-Yates (Knuth) shuffle algorithm
+            const shuffleArray = (array) => {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+                }
+            };
 
-        function showSlides() {
-            const carouselSlide = document.getElementById('projectCarousel');
-            if (carouselSlide) {
-                // Ensure slideIndex wraps around
-                if (slideIndex >= totalSlides) { slideIndex = 0; }
-                if (slideIndex < 0) { slideIndex = totalSlides - 1; }
+            // Shuffle the project cards
+            shuffleArray(projectCards);
 
-                // Apply transform to show the current slide
-                carouselSlide.style.transform = `translateX(-${slideIndex * 100}%)`;
+            // Clear existing elements and append shuffled elements
+            carouselTrack.innerHTML = ''; // Clear current content
+            projectCards.forEach(card => carouselTrack.appendChild(card)); // Append shuffled cards
 
-                // Update active dot
-                const dots = document.querySelectorAll('.dot');
-                dots.forEach((dot, index) => {
-                    dot.classList.remove('active');
-                    if (index === slideIndex) {
-                        dot.classList.add('active');
+            let currentSlideIndex = 0;
+            let itemsPerPage = 3; // Default for large screens
+
+            // Function to determine items per page based on screen width
+            const getItemsPerPage = () => {
+                if (window.innerWidth >= 1024) { // lg breakpoint
+                    return 3;
+                } else if (window.innerWidth >= 640) { // sm breakpoint
+                    return 2;
+                } else { // default for small screens
+                    return 1;
+                }
+            };
+
+            // Update carousel display
+            const updateCarousel = () => {
+                // Ensure currentSlideIndex is within bounds for looping
+                const maxSlideIndex = Math.ceil(projectCards.length / itemsPerPage) - 1;
+
+                if (currentSlideIndex < 0) {
+                    currentSlideIndex = maxSlideIndex;
+                } else if (currentSlideIndex > maxSlideIndex) {
+                    currentSlideIndex = 0;
+                }
+
+                const offset = -currentSlideIndex * (100 / itemsPerPage);
+                carouselTrack.style.transform = `translateX(${offset}%)`;
+            };
+
+            // Handle window resize
+            const handleResize = () => {
+                const newItemsPerPage = getItemsPerPage();
+                if (newItemsPerPage !== itemsPerPage) {
+                    itemsPerPage = newItemsPerPage;
+                    // Recalculate slide index to keep a relevant view after resize
+                    // Ensure the new index doesn't exceed the new max possible index
+                    const maxSlideIndex = Math.ceil(projectCards.length / itemsPerPage) - 1;
+                    if (currentSlideIndex > maxSlideIndex) {
+                        currentSlideIndex = maxSlideIndex;
                     }
-                });
-            }
-        }
+                    updateCarousel();
+                }
+            };
 
-        function moveSlide(n) {
-            slideIndex += n;
-            showSlides();
-        }
+            // Event Listeners for buttons
+            prevBtn.addEventListener('click', () => {
+                currentSlideIndex--;
+                updateCarousel();
+            });
 
-        function currentSlide(n) {
-            slideIndex = n;
-            showSlides();
-        }
+            nextBtn.addEventListener('click', () => {
+                currentSlideIndex++;
+                updateCarousel();
+            });
 
-        // Initialize carousel on page load
-        document.addEventListener('DOMContentLoaded', showSlides);
-
-        // Optional: Auto-play the carousel
-        // setInterval(() => moveSlide(1), 5000); // Change image every 5 seconds
+            // Initial setup and resize listener
+            itemsPerPage = getItemsPerPage(); // Set initial itemsPerPage
+            updateCarousel(); // Display initial slide
+            window.addEventListener('resize', handleResize);
+        });
     </script>
 </body>
 </html>
