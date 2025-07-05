@@ -93,6 +93,44 @@
             width: 2rem;
             height: 2rem;
         }
+
+        /* Mobile menu active state */
+        #main-nav.mobile-menu-active {
+            display: flex; /* Override hidden */
+            flex-direction: column;
+            position: absolute;
+            top: 96px; /* Position below header */
+            right: 0;
+            width: 100%; /* Full width */
+            background-color: white; /* Menu background */
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); /* Shadow */
+            border-radius: 0 0 1rem 1rem; /* Rounded bottom corners */
+            padding: 1rem 1.5rem; /* Padding */
+            align-items: flex-end; /* Align items to the right */
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            transform: translateY(0); /* Slide in */
+            opacity: 1;
+            z-index: 40; /* Ensure it's above other content but below header */
+        }
+
+        /* Initial state for mobile menu (hidden by default, off-screen) */
+        #main-nav {
+            transform: translateY(-100%); /* Start off-screen */
+            opacity: 0;
+            pointer-events: none; /* Disable interaction when hidden */
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition for hiding */
+        }
+
+        /* Override for desktop: ensure it's always visible and static */
+        @media (min-width: 768px) {
+            #main-nav {
+                display: block !important; /* Ensure it's always block on desktop */
+                position: static;
+                transform: none;
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -410,7 +448,7 @@
         // Set current year for the footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links and closing mobile menu
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -418,24 +456,13 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Close mobile menu if open after clicking a link
+
                 const mainNav = document.getElementById('main-nav');
-                // Check if the menu is currently visible (not hidden on mobile)
-                if (!mainNav.classList.contains('hidden') && mainNav.classList.contains('flex')) {
+                // Only close the mobile menu if it's currently open AND on a mobile screen size
+                // Check if 'hidden' is NOT present (meaning it's visible) and if it's a mobile screen
+                if (!mainNav.classList.contains('hidden') && window.innerWidth < 768) {
                     mainNav.classList.add('hidden');
-                    mainNav.classList.remove('flex');
-                    mainNav.classList.remove('flex-col');
-                    mainNav.classList.remove('absolute');
-                    mainNav.classList.remove('top-24');
-                    mainNav.classList.remove('right-0');
-                    mainNav.classList.remove('left-auto');
-                    mainNav.classList.remove('w-full');
-                    mainNav.classList.remove('bg-white');
-                    mainNav.classList.remove('shadow-material');
-                    mainNav.classList.remove('rounded-xl');
-                    mainNav.classList.remove('py-4');
-                    mainNav.classList.remove('px-6');
-                    mainNav.classList.remove('items-end');
+                    mainNav.classList.remove('mobile-menu-active');
                 }
             });
         });
@@ -443,20 +470,9 @@
         // Hamburger menu toggle logic
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mainNav = document.getElementById('main-nav');
+            // Toggle 'hidden' class to show/hide the menu
             mainNav.classList.toggle('hidden');
-            mainNav.classList.toggle('flex'); // Add flex to make it a column
-            mainNav.classList.toggle('flex-col'); // Ensure it stacks vertically
-            mainNav.classList.toggle('absolute'); // Position absolutely
-            mainNav.classList.toggle('top-24'); // Position below header
-            mainNav.classList.remove('right-0'); // Align to right
-            mainNav.classList.remove('left-auto'); // Remove left-0 alignment
-            mainNav.classList.remove('w-full'); // Take full width
-            mainNav.classList.remove('bg-white'); // Give it a background
-            mainNav.classList.remove('shadow-material'); // Add shadow
-            mainNav.classList.remove('rounded-xl'); // Make all corners rounded
-            mainNav.classList.remove('py-4'); // Add padding
-            mainNav.classList.remove('px-6'); // Add padding
-            mainNav.classList.remove('items-end'); // Align items to the right
+            mainNav.classList.toggle('mobile-menu-active'); // Toggle active styling
         });
 
         // Carousel Logic
