@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peak Facades and Rope Access Solutions</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter (similar to Avenir for general use) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- GLightbox CSS -->
     <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         /* Custom Tailwind Configuration for Brand Colors and Fonts */
         :root {
@@ -164,13 +163,11 @@
                 <img src="images/FdMSScA.png" alt="Peak Facades and Rope Access Solutions Logo" class="h-16 mr-4" onerror="this.onerror=null;this.src='https://placehold.co/200x60/244441/dde5e7?text=Peak+Facades+Logo';">
             </a>
         </div>
-        <!-- Hamburger menu button for all screen sizes -->
         <button id="mobile-menu-button" class="text-charcoal-brand focus:outline-none focus:ring-2 focus:ring-emerald-brand rounded-md p-2">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
-        <!-- Navigation menu - now a full-screen overlay -->
         <nav id="main-nav">
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -185,7 +182,6 @@
 
     <section id="home" class="relative bg-emerald-brand text-white py-24 md:py-40 flex flex-col items-center justify-center text-center rounded-b-xl">
         <div class="container mx-auto px-6">
-            <!-- Updated image src to PFARAS~4.PNG and removed rounded/shadow classes -->
             <img src="images/PFARAS~4.PNG" 
                  alt="Peak Facades and Rope Access Solutions Logo" 
                  class="w-full max-w-2xl mx-auto mb-6"
@@ -200,7 +196,7 @@
         </div>
     </section>
 
-    <section id="services" class="py-20 md:py-32 bg-steel-brand text-charcoal-brand rounded-xl mx-auto my-12 max-w-7xl">
+    <section id="services" class="py-20 md:py-32 bg-steel-brand text-charcoal-brand rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">Our Comprehensive Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> 
@@ -246,14 +242,12 @@
         </div>
     </section>
 
-    <section id="work" class="py-20 md:py-32 bg-white text-charcoal-brand">
+    <section id="work" class="py-20 md:py-32 bg-white text-charcoal-brand" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-16">Projects</h2>
 
             <div class="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl shadow-material-lg">
-                <!-- Carousel Track -->
                 <div id="projects-carousel-track" class="flex transition-transform duration-500 ease-in-out">
-                    <!-- Project Card 1: NRT Train Stations NSW -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="https://i.imgur.com/NIedDjf.jpeg" data-gallery="projects" data-glightbox="">
@@ -266,7 +260,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 2: DoubleTree by Hilton Perth Waterfront -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="https://i.imgur.com/SIqk7Qw.jpeg" data-gallery="projects" data-glightbox="">
@@ -279,7 +272,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 3: Perth Hub Apartments -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="images/Phub.png" data-gallery="projects" data-glightbox="">
@@ -292,7 +284,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 4: Capital Square Tower 3 -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="images/CST3.png" data-gallery="projects" data-glightbox="">
@@ -305,7 +296,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 5: Perth City Library -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="images/COP.png" data-gallery="projects" data-glightbox="">
@@ -318,7 +308,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 6: Walyalup Civic Centre -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="https://placehold.co/800x400/244441/dde5e7?text=Walyalup+Civic+Centre" data-gallery="projects" data-glightbox="">
@@ -331,7 +320,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 7: Vibe Hotel -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="https://placehold.co/800x400/244441/dde5e7?text=Vibe+Hotel" data-gallery="projects" data-glightbox="">
@@ -344,7 +332,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 8: The Adnate -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="images/adnate.png" data-gallery="projects" data-glightbox="">
@@ -358,7 +345,6 @@
                     </div>
                 </div>
 
-                <!-- Navigation Buttons -->
                 <button id="prev-btn" class="carousel-button left">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -373,7 +359,7 @@
         </div>
     </section>
 
-    <section id="consumables" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl">
+    <section id="consumables" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">Quality Consumables for Your Projects</h2>
             <p class="text-xl md:text-2xl mb-16 max-w-4xl mx-auto font-normal">
@@ -395,7 +381,7 @@
         </div>
     </section>
 
-    <section id="equipment" class="py-20 md:py-32 bg-steel-brand text-charcoal-brand rounded-xl mx-auto my-12 max-w-7xl">
+    <section id="equipment" class="py-20 md:py-32 bg-steel-brand text-charcoal-brand rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">Equipment Hire</h2>
             <p class="text-xl md:text-2xl mb-16 max-w-4xl mx-auto font-normal">
@@ -437,7 +423,7 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl">
+    <section id="contact" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-16">Contact Peak Facades</h2>
             <div class="max-w-2xl mx-auto bg-white p-10 rounded-xl shadow-material-lg text-charcoal-brand">
@@ -446,7 +432,6 @@
                 </p>
                 <div class="space-y-4 mb-8">
                     <p class="text-lg font-semibold">Email: <a href="mailto:info@pfras.com.au" class="text-emerald-brand hover:underline">info@pfras.com.au</a></p>
-                    <!-- Staffed Hours - Multi-line -->
                     <div class="text-lg">
                         <p class="font-semibold">Staffed Hours:</p>
                         <p>Monday: 6.30am - 2.30pm</p>
@@ -465,7 +450,6 @@
                     </p>
                 </div>
 
-                <!-- Embedded Google Map -->
                 <div class="w-full h-80 rounded-lg overflow-hidden shadow-material-lg">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.733703957597!2d115.91896737525389!3d-31.93664032332159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32b1d3d0f4d1e1%3A0x2d5f8a0e8c0e7d5!2s21%20Moojebing%20St%2C%20Bayswater%20WA%206053%2C%20Australia!5e0!3m2!1sen!2sau!4v1719973200000!5m2!1sen!2sau"
@@ -482,7 +466,7 @@
     </section>
 
     <footer class="bg-charcoal-brand text-steel-brand py-10 px-6 md:px-12 text-center rounded-t-xl">
-        <p class="text-lg">&copy; <span id="current-year"></span> Peak Facades and Rope Access Solutions. All rights reserved.</p>
+        <p class="text-lg">© <span id="current-year"></span> Peak Facades and Rope Access Solutions. All rights reserved.</p>
         <p class="mt-4 text-base">
             <a href="https://www.instagram.com/peak_facades" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-brand transition duration-300">
                 Follow us on Instagram
@@ -492,6 +476,8 @@
 
     <!-- GLightbox JS -->
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         // Initialize GLightbox
         const lightbox = GLightbox({
@@ -634,6 +620,12 @@
             itemsPerPage = getItemsPerPage(); // Set initial itemsPerPage
             updateCarousel(); // Display initial slide
             window.addEventListener('resize', handleResize);
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800, // animation duration
+            once: true,    // whether animation should happen only once - while scrolling down
         });
     </script>
 </body>
