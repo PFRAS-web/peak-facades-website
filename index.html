@@ -308,29 +308,8 @@
                         </div>
                     </div>
 
-                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
-                            <a href="https://placehold.co/800x400/244441/dde5e7?text=Walyalup+Civic+Centre" data-gallery="projects" data-glightbox="">
-                                <img src="https://placehold.co/400x200/244441/dde5e7?text=Walyalup+Civic+Centre" alt="Walyalup Civic Centre" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Walyalup+Civic+Centre';">
-                            </a>
-                            <div class="p-6 text-left flex-grow">
-                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Walyalup Civic Centre</h3>
-                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of the curtain wall facade for the Walyalup Civic Centre in Fremantle, WA, enhancing its modern design and functionality.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
-                            <a href="https://placehold.co/800x400/244441/dde5e7?text=Vibe+Hotel" data-gallery="projects" data-glightbox="">
-                                <img src="https://placehold.co/400x200/244441/dde5e7?text=Vibe+Hotel" alt="Vibe Hotel" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Vibe+Hotel';">
-                            </a>
-                            <div class="p-6 text-left flex-grow">
-                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Vibe Hotel</h3>
-                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of the curtain wall facade for the Vibe Hotel in Subiaco, WA, contributing to its contemporary aesthetic and performance.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Removed Vibe Hotel Project Card -->
+                    <!-- Removed Walyalup Civic Centre Project Card -->
 
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
@@ -589,9 +568,13 @@
             let projectCards = Array.from(carouselTrack.children);
 
             // Filter out the "Residential Glass Facade" project (if it was ever re-added)
+            // Also filter out "Vibe Hotel" and "Walyalup Civic Centre"
             projectCards = projectCards.filter(card => {
                 const titleElement = card.querySelector('h3');
-                return titleElement ? titleElement.textContent !== 'Residential Glass Facade' : true;
+                const titleText = titleElement ? titleElement.textContent : '';
+                return titleText !== 'Residential Glass Facade' &&
+                       titleText !== 'Vibe Hotel' &&
+                       titleText !== 'Walyalup Civic Centre';
             });
 
             // Debugging: Log the number of project cards after filtering
