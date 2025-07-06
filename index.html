@@ -356,6 +356,36 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- New Project Card: Raine Square -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="images/RainSQ.jpg" data-gallery="projects" data-glightbox="">
+                                <img src="images/RainSQ.jpg" alt="Raine Square" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Raine+Square';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Raine Square</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of the facade elements for the prominent Raine Square development, contributing to its modern and vibrant presence in the city center.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Project Card: Yagan Square -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="images/Yagan.jpg" data-gallery="projects" data-glightbox="">
+                                <img src="images/Yagan.jpg" alt="Yagan Square" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Yagan+Square';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Yagan Square</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Our scope included the rustic corten steel install for the iconic Yagan Square, adding a distinctive and durable architectural feature to this vibrant public space.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-4 left-0 right-0 text-center text-charcoal-brand text-sm font-semibold">
+                    <span id="slide-indicator"></span>
                 </div>
 
                 <button id="prev-btn" class="carousel-button left">
@@ -457,26 +487,32 @@
                             <p>Saturday: Closed</p>
                             <p>Sunday: Closed</p>
                         </div>
-                        <p class="text-lg font-semibold">Our Location:</p>
-                        <p class="text-lg">21 Moojebing St, Bayswater, WA 6053</p>
-                        <p class="text-lg font-semibold">
-                            Follow us on Instagram: 
-                            <a href="https://www.instagram.com/peak_facades" target="_blank" rel="noopener noreferrer" class="text-emerald-brand hover:underline">@peak_facades</a>
-                        </p>
                     </div>
                 </div>
 
-                <!-- Embedded Google Map Column (RIGHT) -->
-                <div class="w-full h-80 rounded-lg overflow-hidden shadow-material-lg">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.733703957597!2d115.91896737525389!3d-31.93664032332159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32b1d3d0f4d1e1%3A0x2d5f8a0e8c0e7d5!2s21%20Moojebing%20St%2C%20Bayswater%20WA%206053%2C%20Australia!5e0!3m2!1sen!2sau!4v1719973200000!5m2!1sen!2sau"
-                        width="100%"
-                        height="100%"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <!-- Right Column: Location then Map -->
+                <div class="text-left">
+                    <p class="text-lg font-semibold mb-2">Our Location:</p>
+                    <p class="text-lg mb-6">21 Moojebing St, Bayswater, WA 6053</p>
+                    <div class="w-full h-80 rounded-lg overflow-hidden shadow-material-lg">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.733703957597!2d115.91896737525389!3d-31.93664032332159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32b1d3d0f4d1e1%3A0x2d5f8a0e8c0e7d5!2s21%20Moojebing%20St%2C%20Bayswater%20WA%206053%2C%20Australia!5e0!3m2!1sen!2sau!4v1719973200000!5m2!1sen!2sau"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Centered Instagram Link (Spanning both columns on larger screens) -->
+                <div class="md:col-span-2 text-center mt-8">
+                    <p class="text-lg font-semibold">
+                        Follow us on Instagram: 
+                        <a href="https://www.instagram.com/peak_facades" target="_blank" rel="noopener noreferrer" class="text-emerald-brand hover:underline">@peak_facades</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -558,6 +594,9 @@
                 return titleElement ? titleElement.textContent !== 'Residential Glass Facade' : true;
             });
 
+            // Debugging: Log the number of project cards after filtering
+            console.log("Number of project cards after filtering:", projectCards.length);
+
             // Fisher-Yates (Knuth) shuffle algorithm
             const shuffleArray = (array) => {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -590,10 +629,12 @@
             // Update carousel display
             const updateCarousel = () => {
                 // Ensure currentSlideIndex is within bounds for looping
-                const maxSlideIndex = Math.ceil(projectCards.length / itemsPerPage) - 1;
+                const totalSlides = Math.ceil(projectCards.length / itemsPerPage);
+                const maxSlideIndex = totalSlides - 1;
 
                 if (projectCards.length === 0) { // Handle case with no cards
                     carouselTrack.style.transform = `translateX(0%)`;
+                    document.getElementById('slide-indicator').textContent = 'No projects to display.';
                     return;
                 }
 
@@ -605,6 +646,11 @@
 
                 const offset = -currentSlideIndex * (100 / itemsPerPage);
                 carouselTrack.style.transform = `translateX(${offset}%)`;
+
+                // Update slide indicator
+                document.getElementById('slide-indicator').textContent = `Slide ${currentSlideIndex + 1} of ${totalSlides}`;
+                // Debugging: Log current carousel state
+                console.log(`Current slide: ${currentSlideIndex + 1}, Total slides: ${totalSlides}, Items per page: ${itemsPerPage}`);
             };
 
             // Handle window resize
