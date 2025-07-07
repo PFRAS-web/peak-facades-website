@@ -678,9 +678,26 @@
         // Carousel Logic
         let slideIndex = 0;
         const carouselSlide = document.querySelector('.carousel-slide');
-        // Update carouselItems to include the newly added item
-        const carouselItems = document.querySelectorAll('.carousel-item'); 
-        const totalSlides = carouselItems.length; // Recalculate totalSlides
+        let carouselItems = Array.from(document.querySelectorAll('.carousel-item')); // Convert NodeList to Array
+
+        // Fisher-Yates shuffle algorithm
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+        }
+
+        // Shuffle the carousel items
+        shuffleArray(carouselItems);
+
+        // Clear existing items and append shuffled items
+        carouselSlide.innerHTML = ''; // Clear the current content
+        carouselItems.forEach(item => {
+            carouselSlide.appendChild(item); // Append shuffled items
+        });
+
+        const totalSlides = carouselItems.length; // Recalculate totalSlides after shuffling
         const dotsContainer = document.querySelector('.carousel-dots');
 
         // Clear existing dots to prevent duplicates if script runs multiple times
