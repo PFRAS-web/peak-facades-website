@@ -308,9 +308,6 @@
                         </div>
                     </div>
 
-                    <!-- Removed Vibe Hotel Project Card -->
-                    <!-- Removed Walyalup Civic Centre Project Card -->
-
                     <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
                         <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
                             <a href="images/adnate.png" data-gallery="projects" data-glightbox="">
@@ -358,6 +355,71 @@
                             <div class="p-6 text-left flex-grow">
                                 <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Yagan Square</h3>
                                 <p class="font-normal leading-relaxed text-charcoal-brand">Our scope included the rustic corten steel install for the iconic Yagan Square, adding a distinctive and durable architectural feature to this vibrant public space.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Project Card: Rhodes House -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://placehold.co/800x400/244441/dde5e7?text=Rhodes+House" data-gallery="projects" data-glightbox="">
+                                <img src="https://placehold.co/400x200/244441/dde5e7?text=Rhodes+House" alt="Rhodes House" class="w-full h-48 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/244441/dde5e7?text=Rhodes+House';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Rhodes House</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of facade elements for Rhodes House.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Project Card: Louis Vuitton Perth -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://placehold.co/800x400/244441/dde5e7?text=Louis+Vuitton+Perth" data-gallery="projects" data-glightbox="">
+                                <img src="https://placehold.co/400x200/244441/dde5e7?text=Louis+Vuitton+Perth';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Louis Vuitton Perth</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of facade elements for Louis Vuitton Perth.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Project Card: The Store, Newcastle -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://placehold.co/800x400/244441/dde5e7?text=The+Store,+Newcastle" data-gallery="projects" data-glightbox="">
+                                <img src="https://placehold.co/400x200/244441/dde5e7?text=The+Store,+Newcastle';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">The Store, Newcastle</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of facade elements for The Store, Newcastle.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Project Card: Raaf Base Newcastle -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://placehold.co/800x400/244441/dde5e7?text=Raaf+Base+Newcastle" data-gallery="projects" data-glightbox="">
+                                <img src="https://placehold.co/400x200/244441/dde5e7?text=Raaf+Base+Newcastle';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">Raaf Base Newcastle</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of facade elements for Raaf Base Newcastle.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Project Card: The Terraces -->
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-material overflow-hidden h-full flex flex-col">
+                            <a href="https://placehold.co/800x400/244441/dde5e7?text=The+Terraces" data-gallery="projects" data-glightbox="">
+                                <img src="https://placehold.co/400x200/244441/dde5e7?text=The+Terraces';">
+                            </a>
+                            <div class="p-6 text-left flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-emerald-brand">The Terraces</h3>
+                                <p class="font-normal leading-relaxed text-charcoal-brand">Installation of facade elements for The Terraces.</p>
                             </div>
                         </div>
                     </div>
@@ -578,7 +640,7 @@
             });
 
             // Debugging: Log the number of project cards after filtering
-            console.log("Number of project cards after filtering:", projectCards.length);
+            console.log("Carousel Debug: Number of project cards after filtering:", projectCards.length);
 
             // Fisher-Yates (Knuth) shuffle algorithm
             const shuffleArray = (array) => {
@@ -611,13 +673,14 @@
 
             // Update carousel display
             const updateCarousel = () => {
-                // Ensure currentSlideIndex is within bounds for looping
+                itemsPerPage = getItemsPerPage(); // Re-evaluate itemsPerPage on each update
                 const totalSlides = Math.ceil(projectCards.length / itemsPerPage);
                 const maxSlideIndex = totalSlides - 1;
 
                 if (projectCards.length === 0) { // Handle case with no cards
                     carouselTrack.style.transform = `translateX(0%)`;
                     document.getElementById('slide-indicator').textContent = 'No projects to display.';
+                    console.log("Carousel Debug: No projects to display.");
                     return;
                 }
 
@@ -633,22 +696,13 @@
                 // Update slide indicator
                 document.getElementById('slide-indicator').textContent = `Slide ${currentSlideIndex + 1} of ${totalSlides}`;
                 // Debugging: Log current carousel state
-                console.log(`Current slide: ${currentSlideIndex + 1}, Total slides: ${totalSlides}, Items per page: ${itemsPerPage}`);
+                console.log(`Carousel Debug: Current slide: ${currentSlideIndex + 1}, Total slides: ${totalSlides}, Items per page: ${itemsPerPage}, Offset: ${offset}%`);
             };
 
             // Handle window resize
             const handleResize = () => {
-                const newItemsPerPage = getItemsPerPage();
-                if (newItemsPerPage !== itemsPerPage) {
-                    itemsPerPage = newItemsPerPage;
-                    // Recalculate slide index to keep a relevant view after resize
-                    // Ensure the new index doesn't exceed the new max possible index
-                    const maxSlideIndex = Math.ceil(projectCards.length / itemsPerPage) - 1;
-                    if (currentSlideIndex > maxSlideIndex) {
-                        currentSlideIndex = maxSlideIndex;
-                    }
-                    updateCarousel();
-                }
+                // No need to re-assign itemsPerPage here, it's done in updateCarousel
+                updateCarousel(); // Just call updateCarousel directly on resize
             };
 
             // Event Listeners for buttons
@@ -663,7 +717,6 @@
             });
 
             // Initial setup and resize listener
-            itemsPerPage = getItemsPerPage(); // Set initial itemsPerPage
             updateCarousel(); // Display initial slide
             window.addEventListener('resize', handleResize);
         });
