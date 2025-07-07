@@ -436,7 +436,7 @@
                      <!-- Project 11: Louis Vuitton Perth -->
                     <div class="carousel-item">
                         <div class="carousel-image-wrapper">
-                            <img src="images/lv.png" alt="Louis Vuitton Perth" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x450/244441/dde5e7?text=Image+Not+Found';">
+                            <img src="images/LVr1.png" alt="Louis Vuitton Perth" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x450/244441/dde5e7?text=Image+Not+Found';">
                         </div>
                         <div class="carousel-content">
                             <h3>Louis Vuitton Perth</h3>
@@ -471,6 +471,16 @@
                         <div class="carousel-content">
                             <h3>The Terraces</h3>
                             <p>Installation of facade elements for The Terraces.</p>
+                        </div>
+                    </div>
+                    <!-- New Project: ENEX 100 Redevelopment -->
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="images/ENEX.png" alt="ENEX 100 Redevelopment" class="carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/800x450/244441/dde5e7?text=Image+Not+Found';">
+                        </div>
+                        <div class="carousel-content">
+                            <h3>ENEX 100 Redevelopment</h3>
+                            <p>Our scope for the ENEX 100 Redevelopment encompassed the intricate installation of the large sawtooth window facade and the elegant gold soffit cladding. A significant portion of these works was strategically completed during night shifts to accommodate complex logistical challenges and stringent access requirements, ensuring minimal disruption and efficient project delivery.</p>
                         </div>
                     </div>
                 </div>
@@ -668,8 +678,9 @@
         // Carousel Logic
         let slideIndex = 0;
         const carouselSlide = document.querySelector('.carousel-slide');
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const totalSlides = carouselItems.length;
+        // Update carouselItems to include the newly added item
+        const carouselItems = document.querySelectorAll('.carousel-item'); 
+        const totalSlides = carouselItems.length; // Recalculate totalSlides
         const dotsContainer = document.querySelector('.carousel-dots');
 
         // Clear existing dots to prevent duplicates if script runs multiple times
