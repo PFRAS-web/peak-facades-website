@@ -239,6 +239,59 @@
             z-index: 101; /* Higher than the menu overlay */
             background-color: white; /* Ensure header background is solid */
         }
+
+        /* Styles for the new Behind the Scenes grid */
+        .behind-the-scenes-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 12px rgba(0, 0, 0, 0.08);
+            /* Make the card itself square and center the image */
+            width: 100%;
+            padding-bottom: 100%; /* Creates a square aspect ratio based on width */
+            position: relative; /* Needed for absolute positioning of image */
+        }
+
+        .behind-the-scenes-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the area, crop if necessary */
+            border-radius: 0.75rem; /* Apply to all corners of the image */
+        }
+
+        /* Remove content styling as there's no text now */
+        /* .behind-the-scenes-card .content {
+            padding: 1.5rem;
+        }
+
+        .behind-the-scenes-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-emerald);
+        }
+
+        .behind-the-scenes-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--color-charcoal);
+        } */
+
+        /* Utility for hiding elements with transition */
+        .hidden-item {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .visible-item {
+            /* We use 'block' here because the grid handles the layout,
+               and 'flex' on the card itself is no longer needed without content */
+            display: block; 
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -261,6 +314,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#consumables">Consumables</a></li>
                 <li><a href="#equipment">Equipment Hire</a></li>
+                <li><a href="#behind-the-scenes">Behind the Scenes</a></li> <!-- New Nav Link -->
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -560,6 +614,57 @@
         </div>
     </section>
 
+    <section id="behind-the-scenes" class="py-20 md:py-32 bg-white text-charcoal-brand" data-aos="fade-up">
+        <div class="container mx-auto px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16">Behind the Scenes</h2>
+            <div id="behind-the-scenes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Behind the Scenes Item 1 -->
+                <div class="behind-the-scenes-card">
+                    <img src="images/BTS1.png" alt="Behind the Scenes - Image 1" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Behind the Scenes Item 2 -->
+                <div class="behind-the-scenes-card">
+                    <img src="images/BTS2.png" alt="Behind the Scenes - Image 2" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Behind the Scenes Item 3 -->
+                <div class="behind-the-scenes-card">
+                    <img src="images/BTS3.png" alt="Behind the Scenes - Image 3" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Behind the Scenes Item 4 -->
+                <div class="behind-the-scenes-card">
+                    <img src="images/BTS4.png" alt="Behind the Scenes - Image 4" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Behind the Scenes Item 5 -->
+                <div class="behind-the-scenes-card">
+                    <img src="images/BTS5.png" alt="Behind the Scenes - Image 5" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Behind the Scenes Item 6 -->
+                <div class="behind-the-scenes-card">
+                    <img src="images/BTS6.png" alt="Behind the Scenes - Image 6" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Behind the Scenes Item 7 (Initially Hidden) -->
+                <div class="behind-the-scenes-card hidden-item">
+                    <img src="images/BTS7.png" alt="Behind the Scenes - Image 7" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Behind the Scenes Item 8 (Initially Hidden) -->
+                <div class="behind-the-scenes-card hidden-item">
+                    <img src="images/BTS8.png" alt="Behind the Scenes - Image 8" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Behind the Scenes Item 9 (Initially Hidden) -->
+                <div class="behind-the-scenes-card hidden-item">
+                    <img src="images/BTS9.png" alt="Behind the Scenes - Image 9" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+                <!-- Add BTS10.png as a 10th item -->
+                <div class="behind-the-scenes-card hidden-item">
+                    <img src="images/BTS10.png" alt="Behind the Scenes - Image 10" onerror="this.onerror=null;this.src='https://placehold.co/600x600/244441/dde5e7?text=Image+Not+Found';">
+                </div>
+            </div>
+            <button id="show-more-btn" class="mt-12 bg-emerald-brand text-white hover:bg-light-emerald transition duration-300 py-3 px-8 text-lg font-bold shadow-material rounded-full mx-auto w-fit block">
+                Show More
+            </button>
+        </div>
+    </section>
+
     <section id="contact" class="py-20 md:py-32 bg-emerald-brand text-white rounded-xl mx-auto my-12 max-w-7xl" data-aos="fade-up">
         <div class="container mx-auto px-8 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-16">Contact Peak Facades</h2>
@@ -675,12 +780,7 @@
             }
         });
 
-        // Carousel Logic
-        let slideIndex = 0;
-        const carouselSlide = document.querySelector('.carousel-slide');
-        let carouselItems = Array.from(document.querySelectorAll('.carousel-item')); // Convert NodeList to Array
-
-        // Fisher-Yates shuffle algorithm
+        // Fisher-Yates shuffle algorithm (reusable)
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -688,28 +788,37 @@
             }
         }
 
+        // Carousel Logic (for Projects section)
+        let slideIndex = 0;
+        const carouselSlide = document.querySelector('.carousel-slide');
+        let carouselItems = Array.from(document.querySelectorAll('.carousel-item')); // Convert NodeList to Array
+
         // Shuffle the carousel items
         shuffleArray(carouselItems);
 
         // Clear existing items and append shuffled items
-        carouselSlide.innerHTML = ''; // Clear the current content
-        carouselItems.forEach(item => {
-            carouselSlide.appendChild(item); // Append shuffled items
-        });
-
+        if (carouselSlide) { // Check if carouselSlide exists before manipulating
+            carouselSlide.innerHTML = ''; // Clear the current content
+            carouselItems.forEach(item => {
+                carouselSlide.appendChild(item); // Append shuffled items
+            });
+        }
+        
         const totalSlides = carouselItems.length; // Recalculate totalSlides after shuffling
         const dotsContainer = document.querySelector('.carousel-dots');
 
         // Clear existing dots to prevent duplicates if script runs multiple times
-        dotsContainer.innerHTML = '';
+        if (dotsContainer) { // Check if dotsContainer exists
+            dotsContainer.innerHTML = '';
 
-        // Create dots dynamically
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            dot.setAttribute('data-index', i);
-            dot.addEventListener('click', () => currentSlide(i));
-            dotsContainer.appendChild(dot);
+            // Create dots dynamically
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', () => currentSlide(i));
+                dotsContainer.appendChild(dot);
+            }
         }
 
         const updateCarousel = () => {
@@ -743,29 +852,26 @@
         };
 
         // Add event listeners for carousel buttons
-        document.querySelector('.carousel-button.next').addEventListener('click', () => moveSlide(1));
-        document.querySelector('.carousel-button.prev').addEventListener('click', () => moveSlide(-1));
+        const nextButton = document.querySelector('.carousel-button.next');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        if (nextButton) nextButton.addEventListener('click', () => moveSlide(1));
+        if (prevButton) prevButton.addEventListener('click', () => moveSlide(-1));
 
         // Touch swipe logic for carousel
         let touchStartX = 0;
         let touchEndX = 0;
         const minSwipeDistance = 50; // Minimum pixels to register a swipe
 
-        carouselSlide.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        });
+        if (carouselSlide) { // Check if carouselSlide exists before adding event listeners
+            carouselSlide.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            });
 
-        carouselSlide.addEventListener('touchmove', (e) => {
-            // Prevent vertical scrolling while swiping horizontally
-            // This can be tricky and sometimes interferes with normal scrolling,
-            // so it's often better to let the browser handle it unless strictly necessary.
-            // For now, we'll just track the movement.
-        });
-
-        carouselSlide.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
+            carouselSlide.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+        }
 
         function handleSwipe() {
             const swipeDistance = touchEndX - touchStartX;
@@ -790,6 +896,55 @@
         AOS.init({
             duration: 800, // animation duration
             once: true,    // whether animation should happen only once - while scrolling down
+        });
+
+        // Behind the Scenes "Show More" logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const behindTheScenesGrid = document.getElementById('behind-the-scenes-grid');
+            let behindTheScenesItems = Array.from(behindTheScenesGrid.querySelectorAll('.behind-the-scenes-card')); // Get all items
+            const showMoreBtn = document.getElementById('show-more-btn');
+            const initialVisibleItems = 6;
+            let currentVisibleItems = initialVisibleItems;
+
+            // Shuffle the behind the scenes items
+            shuffleArray(behindTheScenesItems);
+
+            // Clear existing items and append shuffled items to the grid
+            behindTheScenesGrid.innerHTML = '';
+            behindTheScenesItems.forEach(item => {
+                behindTheScenesGrid.appendChild(item);
+            });
+
+            // Function to update visibility
+            const updateBehindTheScenesVisibility = () => {
+                behindTheScenesItems.forEach((item, index) => {
+                    if (index < currentVisibleItems) {
+                        item.classList.remove('hidden-item');
+                        item.classList.add('visible-item');
+                    } else {
+                        item.classList.add('hidden-item');
+                        item.classList.remove('visible-item');
+                    }
+                });
+
+                // Hide the button if all items are visible
+                if (currentVisibleItems >= behindTheScenesItems.length) {
+                    showMoreBtn.style.display = 'none';
+                } else {
+                    showMoreBtn.style.display = 'block';
+                }
+            };
+
+            // Event listener for the "Show More" button
+            if (showMoreBtn) {
+                showMoreBtn.addEventListener('click', () => {
+                    currentVisibleItems = behindTheScenesItems.length; // Show all remaining items
+                    updateBehindTheScenesVisibility();
+                });
+            }
+
+            // Initial call to set visibility on load
+            updateBehindTheScenesVisibility();
         });
     </script>
 </body>
